@@ -1,0 +1,16 @@
+.gradient-custom-2 {
+    background: #fccb90; /* Fallback for old browsers */
+  }
+  
+  @supports (-webkit-appearance: none) or (-moz-appearance: none) {
+    /* Chrome 10-25, Safari 5.1-6 */
+    .gradient-custom-2 {
+      background: -webkit-linear-gradient(to right, #146fd7, #0374f6, #ee7724, #e9810a);
+    }
+  }
+  
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  .gradient-custom-2 {
+    background: linear-gradient(to right, #146fd7, #0374f6, #ee7724, #e9810a);
+  }
+  

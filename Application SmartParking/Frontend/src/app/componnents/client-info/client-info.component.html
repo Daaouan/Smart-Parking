@@ -1,0 +1,104 @@
+<div class="row">
+    <div>
+        <div layout:fragment="content" style="padding: 10px">
+            <div class="row">
+                <div>
+                    <div class="card-header">
+                        Client Informations
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Client Name:</th>
+                                    <th scope="col">Email:</th>
+                                    <th scope="col">Car Id :</th>
+                                    <th scope="col">Matricule</th>
+                                    <th scope="col">Abonnement</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">{{car.clientName}}</th>
+                                    <td>{{car.email}}</td>
+                                    <td>{{car.id}}</td>
+                                    <td>{{car.matricule}}</td>
+                                    <td>
+                                        <div *ngIf="abonnement.car==car.id">
+                                            <div>
+                                                <label>Abonnement Id :</label>
+                                                <label>{{abonnement.id}}</label>
+                                            </div>
+                                            <div>
+                                                <label>Date Debut :</label>
+                                                <label>{{abonnement.start_date}}</label>
+                                            </div>
+                                            <div>
+                                                <label>Date Fin :</label>
+                                                <label>{{abonnement.end_date}}</label>
+                                            </div>
+                                            <br>
+                                            <button type="button" class="btn btn-secondary"
+                                                (click)="editAbonnementDialoge(abonnement,'1000ms', '500ms')">Prolongement</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <hr>
+
+            <div class="row" *ngIf="abonnement.car==car.id">
+                <div class="offset">
+                    <div class="card mb-2">
+                        <div class="card-header">
+                            Liste des Entrée/Sorties
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-striped" id="EntSor">
+                                <tr>
+                                    <th>Temps d'entrée</th>
+                                    <th>Temps de sortie</th>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+
+                            <div>
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination">
+                                        <li class="page-item">
+                                            <a class="page-link" href="#" aria-label="Previous">
+                                                <span aria-hidden="true">&laquo;</span>
+                                                <span class="sr-only">Previous</span>
+                                            </a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a></a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#" aria-label="Next">
+                                                <span aria-hidden="true">&raquo;</span>
+                                                <span class="sr-only">Next</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                                <button type="button" class="btn btn-secondary" style="margin-left: 10px;"
+                                    (click)="printReport()">Exporter</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    </div>
+
+</div>
+<br><br><br>

@@ -1,0 +1,18 @@
+<div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ClientId</th>
+                <th scope="col">ClientName</th>
+                <th scope="col">Nº.Matricule</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let car of cars">
+            <tr>
+                <th scope="row"><a routerLink="/clientInfo/{{car.id}}" (click)="this._dialogRef.close();">{{car.id}}</a></th>
+                <td>{{car.clientName}}</td>
+                <td>{{car.matricule}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

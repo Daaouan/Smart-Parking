@@ -1,0 +1,43 @@
+<form [formGroup]="AbonnementForm" (ngSubmit)="OnSave()" class="form">
+    <div class="card rounded-3 text-black">
+        <div class="align-items-center gradient-custom-2">
+            <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                <div class="text-center">
+                    <h2><b>{{data ? 'Update': 'Add New'}} Abonnement</b></h2>
+                </div><br>
+
+                <div *ngIf="errorMsg" class="error-message">{{errorMsg}}</div>
+
+                <mat-form-field style="width: 100%;">
+                    <mat-label>Select Client</mat-label>
+                    <mat-select formControlName="car">
+                        <mat-option *ngFor="let car of cars" [value]="car.id">
+                            {{ car.clientName }}
+                          </mat-option>
+                    </mat-select>
+                    <mat-hint>Here's the dropdown arrow Clients</mat-hint>
+                </mat-form-field>
+
+                <mat-form-field style="width: 100%;">
+                    <mat-label>Date debut</mat-label>
+                    <input matInput [matDatepicker]="pickerStart" formControlName="start_date">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="pickerStart"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field style="width: 100%;">
+                    <mat-label>Date Fin</mat-label>
+                    <input matInput [matDatepicker]="pickerEnd" formControlName="end_date">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="pickerEnd"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <div mat-dialog-actions class="action pt-1 mb-5" style="justify-content: center; margin-top: 30px;">
+                    <button type="submit" class="btn btn-success btn-block">
+                        <i class="fa fa-paper-plane"></i> {{data ? 'Update': 'Ajouter'}}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

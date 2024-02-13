@@ -1,0 +1,107 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand text-warning" href="/">Parking IoT</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+        aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+  
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-warning" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Clients
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+              <li><button class="nav-link active" aria-current="page" (click)="openCarDialog('1000ms', '500ms')">Ajouter Client</button></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item  text-warning" (click)="openCarsListe('1000ms', '500ms')">Liste Clients</a></li>
+            </ul>
+          </li>
+  
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-warning" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Abonnement
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+              <li><button class="dropdown-item" (click)="openAbonnementDialog('1000ms', '500ms')">Ajouter Abonnement</button></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item  text-warning" (click)="openCarsListe('1000ms', '500ms')">Liste Abonnement</a></li>
+            </ul>
+          </li>
+        </ul>
+        <button class="btn btn-outline-light" style="margin-right: 50px;" (click)="logout()">Logout</button>
+      </div>
+    </div>
+  </nav>
+  
+  <div style="display: flex; height: 100%; text-align: center; font-size: 17px; margin-top: 10px;">
+    <div class="left" style="width: 50%; height: 100%; margin-left: 10px;">
+      <div class="table1" style="height: 40%;">
+        <br>
+        <p><b style="color: rgb(0, 128, 255); font-size: 25px;">Voitures entrantes:</b></p>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Matricule</th>
+              <th scope="col">Client</th>
+              <th scope="col">Heure</th>
+              <th scope="col">Abonnement</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>fat</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table2" style="height: 40%; margin-top: 30px;">
+        <p><b style="color: rgb(0, 128, 255); font-size: 25px;">Voitures sortantes:</b></p>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Matricule</th>
+              <th scope="col">Client</th>
+              <th scope="col">Heure</th>
+              <th scope="col">Abonnement</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>fat</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  
+    <div class="right" style="display: flex; flex-direction: column; margin-left: 20px; width: 640px; height: 580px;">
+      <br><p><b style="color: rgba(0, 0, 0, 0.43); font-size: 25px;">Camera</b></p><br>
+     <!-- <img [src]="videoSrc" alt="Video Stream" style="flex: 1; border-radius: 30px;">-->
+      <iframe
+            src="http://127.0.0.1:8000/video_feed/"
+            style="flex: 1; border-radius: 10px;">
+      </iframe>
+    </div>
+  </div>

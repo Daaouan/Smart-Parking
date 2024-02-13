@@ -1,0 +1,37 @@
+<form [formGroup]="CarForm" (ngSubmit)="OnSave()" class="form">
+    <div class="card rounded-3 text-black">
+        <div class="align-items-center gradient-custom-2">
+            <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                <div class="text-center">
+                    <h2><b>{{data ? 'Update': 'Add New'}} Client</b></h2>
+                </div><br><br><br>
+
+                <h4 style="text-align: center;"><b>Client info</b></h4>
+                <div *ngIf="errorMsg" class="error-message">{{errorMsg}}</div>
+                <div class="form-outline mb-4">
+                    <input id="form2Example11" class="form-control" type="text" placeholder="name"
+                        formControlName="clientName">
+                    <label class="form-label" for="clientName">Client name</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                    <input id="form2Example11" class="form-control" type="text" placeholder="email"
+                        formControlName="email">
+                    <label class="form-label" for="clientName">Email</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                    <input id="form2Example11" class="form-control" type="text" placeholder="matricule"
+                        formControlName="matricule">
+                    <label class="form-label" for="matricule">Car's Matricule</label>
+                </div>
+                <div mat-dialog-actions class="action pt-1 mb-5"
+                    style="justify-content: center; margin-top: 30px;">
+                    <button type="submit" class="btn btn-success btn-block">
+                        <i class="fa fa-paper-plane"></i> {{data ? 'Update': 'Ajouter'}}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
