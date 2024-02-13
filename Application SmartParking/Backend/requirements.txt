@@ -1,0 +1,7 @@
+dj_database_url
+django-cors-headers
+djangorestframework
+mysqlclient
+opencv-python
+ultralytics
+easyocr
